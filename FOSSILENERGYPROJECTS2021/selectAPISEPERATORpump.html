@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SELECT HSD PUMP</title>
+    <title>SELECT API PUMP</title>
     <style>
         body {
             background: #2d2d2d;
@@ -178,13 +178,13 @@
 
 <body>
     </div>
-    <p>PLEASE SELECT YOUR HSD PUMP</p>
+    <p>PLEASE SELECT API SEPERATOR PUMP</p>
     <div>
         <div class="select" tabindex="1">
 
             <input class="selectopt" name="test" type="radio" id="opt1" checked>
             <label for="opt1" class="option">Select Pumps</label>
-            <input class="selectopt" name="test" type="radio" id="opt2">
+            <!-- <input class="selectopt" name="test" type="radio" id="opt2">
             <label for="opt2" class="option" id="">HSD1</label>
             <input class="selectopt" name="test" type="radio" id="opt3">
             <label for="opt3" class="option">HSD2</label>
@@ -196,14 +196,14 @@
             <label for="opt6" class="option">HSD5</label>
             <input class="selectopt" name="test" type="radio" id="opt7">
             <label for="opt7" class="option">HSD6</label>
-            <input class="selectopt" name="test" type="radio" id="opt8">
-            <label for="opt8" class="option">MS1</label>
+            <input class="selectopt" name="test" type="radio" id="opt8"> -->
+            <!-- <label for="opt8" class="option">MS1</label>
             <input class="selectopt" name="test" type="radio" id="opt9">
             <label for="opt9" class="option">MS2</label>
             <input class="selectopt" name="test" type="radio" id="opt10">
             <label for="opt10" class="option">MS3</label>
             <input class="selectopt" name="test" type="radio" id="opt11">
-            <label for="opt11" class="option">MS4</label>
+            <label for="opt11" class="option">MS4</label> -->
             <input class="selectopt" name="test" type="radio" id="opt12">
             <label for="opt12" class="option">API SEPERATOR 1</label>
             <input class="selectopt" name="test" type="radio" id="opt13">
@@ -212,19 +212,11 @@
 
 
         </div>
-        <button class="glow-on-hover" type="button" onclick="donekro()">SUBMIT</button>
+        <button class="glow-on-hover" type="button" id="apijao">SUBMIT</button>
         <script type="text/javascript">
-            document.getElementById("hsdjao").onclick = function () {
-                location.href = "file:///D:/gamicaweb/FOSSILENERGYPROJECTS2021/equipments.html";
+            document.getElementById("apijao").onclick = function () {
+                location.href = "file:///D:/gamicaweb/FOSSILENERGYPROJECTS2021/API-SEPERATOR.html";
             };
-            function donekro() {
-                hs1 = document.getElementById('opt2');
-                if (hs1) {
-                    document.getElementById("opt2").onclick = function () {
-                        location.href = "file:///D:/gamicaweb/FOSSILENERGYPROJECTS2021/equipments.html";
-                    };
-                }
-            }
 
         </script>
 
