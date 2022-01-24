@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .parent {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            min-height: 100vh;
+            background: #232427;
+        }
+
+
+
+        .parent .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 70%;
+            margin: 40px 0;
+        }
+
+        .parent .container .card {
+            position: relative;
+            min-width: 262px;
+            height: 350px;
+            box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+                inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+                5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin: 20px;
+            transition: 0.5s;
+        }
+
+        .radio_btns {
+            color: #e91e63;
+        }
+
+
+        .parent .container .card:nth-child(1) .box .content a {
+            background: #2196f3;
+        }
+
+        .parent .container .card:nth-child(2) .box .content a {
+            background: #e91e63;
+        }
+
+        .parent .container .card:nth-child(3) .box .content a {
+            background: #23c186;
+        }
+
+        .parent .container .card .box {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background: #2a2b2f;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .parent .container .card .box:hover {
+            transform: translateY(-50px);
+        }
+
+        .aprent .container .card .box:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .parent .container .card .box .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .parent .container .card .box .content h2 {
+            position: absolute;
+            top: -10px;
+            right: 30px;
+            font-size: 8rem;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        .parent .container .card .box .content h3 {
+            font-size: 1.8rem;
+            color: #fff;
+            z-index: 1;
+            transition: 0.5s;
+            margin-bottom: 15px;
+        }
+
+        .parent .container .card .box .content p {
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+            z-index: 1;
+            transition: 0.5s;
+        }
+
+        .parent .container .card .box .content a {
+            position: relative;
+            display: inline-block;
+            padding: 8px 20px;
+            background: black;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            margin-top: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: 0.5s;
+        }
+
+        .parent .container .card .box .content a:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+            background: #fff;
+            color: #000;
+        }
+
+        button {
+
+            background: rgba(255, 255, 255, 0.03);
+            color: #e91e63;
+
+            border: 2px solid #e91e63;
+        }
+
+        .messagearea {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #pump_type_and_serial_number {
+            text-align: center;
+            background-color: #2a2b2f;
+            height: 20vh;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="" id="pump_type_and_serial_number">
+
+        <!-- PUMP KE TYPES -->
+        <label for="standard-select">PUMP PRODUCT TYPE</label>
+        <div class="select">
+            <select id="standard-select">
+                <option value="Option 1">HSD</option>
+                <option value="Option 2">MS</option>
+                <option value="Option 3">API SEPERATOR</option>
+                <!-- <option value="Option 4">Option 4</option>
+            <option value="Option 5">Option 5</option>
+            <option value="Option length">Option that has too long of a value to fit</option> -->
+            </select>
+            <span class="focus"></span>
+        </div>
+
+        <!-- PUMP KE SERIAL NUMBERS -->
+        <label for="standard-select">PUMP SERIAL NUMBER</label>
+        <div class="select">
+            <select id="standard-select">
+                <option value="Option 1">YI11805230106</option>
+                <option value="Option 2">YI11805230107</option>
+                <option value="Option 3">YI11805230108</option>
+                <option value="Option 4">YI11805230109</option>
+                <option value="Option 5">YI11805230110</option>
+                <option value="Option 6">YI11805230101</option>
+                <option value="Option 7">YI11805230102</option>
+                <option value="Option 8">YI11805230103</option>
+                <option value="Option 9">YI11805230104</option>
+                <option value="Option 10">YI11805230105</option>
+                <option value="Option 11">YI11805230111</option>
+                <option value="Option 12">YI11805230112</option>
+                <option value="Option 13">YI1110201</option>
+                <option value="Option 14">YI1110203</option>
+                <!-- <option value="Option length">Option that has too long of a value to fit</option> -->
+            </select>
+            <span class="focus"></span>
+        </div>
+
+        <div class="parent">
+
+            <div class="container">
+                <div class="card">
+                    <div class="box">
+                        <div class="content">
+                            <h2>01</h2>
+                            <h3>PUMP</h3>
+                            <p>Is pump base securely fastened to foundations?</p>
+                            <!-- <a href="#">Read More</a> -->
+                            <div class="radio_btns">
+                                <label for="">YES</label><input type="radio" name="yes" id="">
+                                <label for="">NO</label><input type="radio" name="yes" id="">
+                            </div>
+                            <div class="messagearea">
+                                <textarea name="" id="" cols="30" rows="10"
+                                    placeholder="	Note Fault & Rectification Completed/Action Required."></textarea>
+                                <button>SUBMIT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="box">
+                        <div class="content">
+                            <h2>02</h2>
+                            <h3>PUMP</h3>
+                            <p>Are holding down bolts in good repair without significant areas of corrosion?</p>
+                            <!-- <a href="#">Read More</a> -->
+                            <div class="radio_btns">
+                                <label for="">YES</label><input type="radio" name="yes" id="">
+                                <label for="">NO</label><input type="radio" name="yes" id="">
+                            </div>
+                            <div class="messagearea">
+                                <textarea name="" id="" cols="30" rows="10"
+                                    placeholder="	Note Fault & Rectification Completed/Action Required."></textarea>
+                                <button>SUBMIT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="box">
+                        <div class="content">
+                            <h2>03</h2>
+                            <h3>PUMP</h3>
+                            <p> Is the pump base plate in good condition without significant areas of corrosion?</p>
+                            <!-- <a href="#">Read More</a> -->
+                            <div class="radio_btns">
+                                <label for="">YES</label><input type="radio" name="yes" id="">
+                                <label for="">NO</label><input type="radio" name="yes" id="">
+                            </div>
+                            <div class="messagearea">
+                                <textarea name="" id="" cols="30" rows="10"
+                                    placeholder="	Note Fault & Rectification Completed/Action Required."></textarea>
+                                <button>SUBMIT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="box">
+                        <div class="content">
+                            <h2>04</h2>
+                            <h3>PUMP</h3>
+                            <p>Is there no evidence of leaks from the piping connections?</p>
+                            <div class="radio_btns">
+                                <label for="">YES</label><input type="radio" name="yes" id="">
+                                <label for="">NO</label><input type="radio" name="yes" id="">
+                            </div>
+                            <div class="messagearea">
+                                <textarea name="" id="" cols="30" rows="10"
+                                    placeholder="	Note Fault & Rectification Completed/Action Required."></textarea>
+                                <button>SUBMIT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="box">
+                        <div class="content">
+                            <h2>05</h2>
+                            <h3>PUMP</h3>
+                            <p>Is there no evidence of leaks from the seal or gland area?</p>
+                            <div class="radio_btns">
+                                <label for="">YES</label><input type="radio" name="yes" id="">
+                                <label for="">NO</label><input type="radio" name="yes" id="">
+                            </div>
+                            <div class="messagearea">
+                                <textarea name="" id="" cols="30" rows="10"
+                                    placeholder="	Note Fault & Rectification Completed/Action Required."></textarea>
+                                <button>SUBMIT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="box">
+                        <div class="content">
+                            <h2>06</h2>
+                            <h3>PUMP</h3>
+                            <p>Is the oil level (if visible) correct?</p>
+                            <div class="radio_btns">
+                                <label for="">YES</label><input type="radio" name="yes" id="">
+                                <label for="">NO</label><input type="radio" name="yes" id="">
+                            </div>
+                            <div class="messagearea">
+                                <textarea name="" id="" cols="30" rows="10"
+                                    placeholder="	Note Fault & Rectification Completed/Action Required."></textarea>
+                                <button>SUBMIT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="box">
+                        <div class="content">
+                            <h2>07</h2>
+                            <h3>PUMP</h3>
+                            <p>Is there no evidence of oil or grease leaking from pump bearings?</p>
+                            <div class="radio_btns">
+                                <label for="">YES</label><input type="radio" name="yes" id="">
+                                <label for="">NO</label><input type="radio" name="yes" id="">
+                            </div>
+                            <div class="messagearea">
+                                <textarea name="" id="" cols="30" rows="10"
+                                    placeholder="	Note Fault & Rectification Completed/Action Required."></textarea>
+                                <button>SUBMIT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="box">
+                        <div class="content">
+                            <h2>08</h2>
+                            <h3>PUMP</h3>
+                            <p>Is the coupling guard in place and secure?</p>
+                            <div class="radio_btns">
+                                <label for="">YES</label><input type="radio" name="yes" id="">
+                                <label for="">NO</label><input type="radio" name="yes" id="">
+                            </div>
+                            <div class="messagearea">
+                                <textarea name="" id="" cols="30" rows="10"
+                                    placeholder="	Note Fault & Rectification Completed/Action Required."></textarea>
+                                <button>SUBMIT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="messagearea">
+                    <textarea name="" id="" cols="30" rows="10"
+                        placeholder="	Note Fault & Rectification Completed/Action Required."></textarea>
+                    <button>SUBMIT</button>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
