@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELECT HSD PUMP</title>
+    <style>
+        body {
+            background: #2d2d2d;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+            height: 50vh;
+            width: 100vw;
+            font-family: sans-serif;
+            color: #fff;
+        }
+
+        .select {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 250px;
+            height: 30px;
+        }
+
+        .option {
+            padding: 0 30px 0 10px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            background: #333;
+            border-top: #222 solid 1px;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            pointer-events: none;
+            order: 2;
+            z-index: 1;
+            transition: background 0.4s ease-in-out;
+            box-sizing: border-box;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .option:hover {
+            background: #666;
+        }
+
+        .select:focus .option {
+            position: relative;
+            pointer-events: all;
+        }
+
+        input {
+            opacity: 0;
+            position: absolute;
+            left: -99999px;
+        }
+
+        input:checked+label {
+            order: 1;
+            z-index: 2;
+            background: #666;
+            border-top: none;
+            position: relative;
+        }
+
+        input:checked+label:after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid white;
+            position: absolute;
+            right: 10px;
+            top: calc(50% - 2.5px);
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        input:checked+label:before {
+            position: absolute;
+            right: 0;
+            height: 40px;
+            width: 40px;
+            content: "";
+            background: #666;
+        }
+
+        p {
+            font-size: large;
+        }
+
+
+
+        .glow-on-hover {
+            width: 220px;
+            height: 50px;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            position: relative;
+            top: 30px;
+            left: 13px;
+            font-weight: bold;
+        }
+
+        .glow-on-hover:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover:active {
+            color: #000
+        }
+
+        .glow-on-hover:active:after {
+            background: transparent;
+        }
+
+        .glow-on-hover:hover:before {
+            opacity: 1;
+        }
+
+        .glow-on-hover:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+
+        }
+
+        @keyframes glowing {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    </div>
+    <p>PLEASE SELECT YOUR HSD PUMP</p>
+    <div>
+        <div class="select" tabindex="1">
+
+            <input class="selectopt" name="test" type="radio" id="opt1" checked>
+            <label for="opt1" class="option">Select Pumps</label>
+            <input class="selectopt" name="test" type="radio" id="opt2">
+            <label for="opt2" class="option" id="">HSD1</label>
+            <input class="selectopt" name="test" type="radio" id="opt3">
+            <label for="opt3" class="option">HSD2</label>
+            <input class="selectopt" name="test" type="radio" id="opt4">
+            <label for="opt4" class="option">HSD3</label>
+            <input class="selectopt" name="test" type="radio" id="opt5">
+            <label for="opt5" class="option">HSD4</label>
+            <input class="selectopt" name="test" type="radio" id="opt6">
+            <label for="opt6" class="option">HSD5</label>
+            <input class="selectopt" name="test" type="radio" id="opt7">
+            <label for="opt7" class="option">HSD6</label>
+            <input class="selectopt" name="test" type="radio" id="opt8">
+            <label for="opt8" class="option">MS1</label>
+            <input class="selectopt" name="test" type="radio" id="opt9">
+            <label for="opt9" class="option">MS2</label>
+            <input class="selectopt" name="test" type="radio" id="opt10">
+            <label for="opt10" class="option">MS3</label>
+            <input class="selectopt" name="test" type="radio" id="opt11">
+            <label for="opt11" class="option">MS4</label>
+            <input class="selectopt" name="test" type="radio" id="opt12">
+            <label for="opt12" class="option">API SEPERATOR 1</label>
+            <input class="selectopt" name="test" type="radio" id="opt13">
+            <label for="opt13" class="option">API SEPERATOR 2</label>
+
+
+
+        </div>
+        <button class="glow-on-hover" type="button" onclick="donekro()">SUBMIT</button>
+        <script type="text/javascript">
+            document.getElementById("hsdjao").onclick = function () {
+                location.href = "file:///D:/gamicaweb/FOSSILENERGYPROJECTS2021/equipments.html";
+            };
+            function donekro() {
+                hs1 = document.getElementById('opt2');
+                if (hs1) {
+                    document.getElementById("opt2").onclick = function () {
+                        location.href = "file:///D:/gamicaweb/FOSSILENERGYPROJECTS2021/equipments.html";
+                    };
+                }
+            }
+
+        </script>
+
+</body>
+
+</html>
