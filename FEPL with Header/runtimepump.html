@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUNTIME</title>
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --select-border: #777;
+            --select-focus: blue;
+            --select-arrow: var(--select-border);
+        }
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: transparent;
+            border: none;
+            padding: 0 1em 0 0;
+            margin: 0;
+            width: 100%;
+            font-family: inherit;
+            font-size: inherit;
+            cursor: inherit;
+            line-height: inherit;
+            z-index: 1;
+            outline: none;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        .select {
+            display: grid;
+            grid-template-areas: "select";
+            align-items: center;
+            position: relative;
+            min-width: 15ch;
+            max-width: 30ch;
+            border: 1px solid var(--select-border);
+            border-radius: 0.25em;
+            padding: 0.25em 0.5em;
+            font-size: 1.25rem;
+            cursor: pointer;
+            line-height: 1.1;
+            background-color: #fff;
+            background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+        }
+
+        .select select,
+        .select::after {
+            grid-area: select;
+        }
+
+        .select:not(.select--multiple)::after {
+            content: "";
+            justify-self: end;
+            width: 0.8em;
+            height: 0.5em;
+            background-color: var(--select-arrow);
+            -webkit-clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+            clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+        }
+
+        select:focus+.focus {
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            border: 2px solid var(--select-focus);
+            border-radius: inherit;
+        }
+
+        select[multiple] {
+            padding-right: 0;
+            /*
+           * Safari will not reveal an option
+           * unless the select height has room to 
+           * show all of it
+           * Firefox and Chrome allow showing 
+           * a partial option
+           */
+            height: 6rem;
+            /* 
+           * Experimental - styling of selected options
+           * in the multiselect
+           * Not supported crossbrowser
+           */
+        }
+
+        select[multiple] option {
+            white-space: normal;
+            outline-color: var(--select-focus);
+        }
+
+        .select--disabled {
+            cursor: not-allowed;
+            background-color: #eee;
+            background-image: linear-gradient(to top, #ddd, #eee 33%);
+        }
+
+        label {
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+
+        .select+label {
+            margin-top: 2rem;
+        }
+
+        body {
+            min-height: 100vh;
+            display: grid;
+            place-content: center;
+            grid-gap: 0.5rem;
+            font-family: "Baloo 2", sans-serif;
+            background-color: #2a2b2f;
+            padding: 1rem;
+
+        }
+
+
+        button {
+
+            background: rgba(255, 255, 255, 0.03);
+            color: #e91e63;
+
+            border: 2px solid #e91e63;
+        }
+
+        .messagearea {
+            display: flex;
+            flex-direction: column;
+        }
+        label{
+            color: #fff;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Updated border colors such as for an error state -->
+    <!-- Add to .select ➡️ style="--select-border: red; --select-focus: red" -->
+    <form action="">
+
+        <!-- PUMP KE TYPES -->
+        <label for="standard-select">PUMP PRODUCT TYPE</label>
+        <div class="select">
+            <select id="standard-select">
+                <option value="Option 1">HSD</option>
+                <option value="Option 2">MS</option>
+                <option value="Option 3">API SEPERATOR</option>
+                <!-- <option value="Option 4">Option 4</option>
+            <option value="Option 5">Option 5</option>
+            <option value="Option length">Option that has too long of a value to fit</option> -->
+            </select>
+            <span class="focus"></span>
+        </div>
+
+        <!-- PUMP KE SERIAL NUMBERS -->
+        <label for="standard-select">PUMP SERIAL NUMBER</label>
+        <div class="select">
+            <select id="standard-select">
+                <option value="Option 1">YI11805230106</option>
+                <option value="Option 2">YI11805230107</option>
+                <option value="Option 3">YI11805230108</option>
+                <option value="Option 4">YI11805230109</option>
+                <option value="Option 5">YI11805230110</option>
+                <option value="Option 6">YI11805230101</option>
+                <option value="Option 7">YI11805230102</option>
+                <option value="Option 8">YI11805230103</option>
+                <option value="Option 9">YI11805230104</option>
+                <option value="Option 10">YI11805230105</option>
+                <option value="Option 11">YI11805230111</option>
+                <option value="Option 12">YI11805230112</option>
+                <option value="Option 13">YI1110201</option>
+                <option value="Option 14">YI1110203</option>
+                <!-- <option value="Option length">Option that has too long of a value to fit</option> -->
+            </select>
+            <span class="focus"></span>
+        </div>
+
+        <!-- <label for="multi-select">Multiple Select</label>
+        <div class="select select--multiple">
+            <select id="multi-select" multiple>
+                <option value="Option 1">Option 1</option>
+                <option value="Option 2">Option 2</option>
+                <option value="Option 3">Option 3</option>
+                <option value="Option 4">Option 4</option>
+                <option value="Option 5">Option 5</option>
+                <option value="Option length">Option that has too long of a value to fit</option>
+            </select>
+            <span class="focus"></span>
+        </div> -->
+
+        <!-- <label for="standard-select-disabled">Disabled Select</label>
+    <div class="select select--disabled">
+        <select id="standard-select-disabled" disabled>
+            <option value="Option 1">Option 1</option>
+            <option value="Option 2">Option 2</option>
+            <option value="Option 3">Option 3</option>
+            <option value="Option 4">Option 4</option>
+            <option value="Option 5">Option 5</option>
+            <option value="Option length">Option that is a long value and could wrap</option>
+        </select>
+    </div> -->
+
+        <!-- <label for="standard-select">Disabled Multiple Select</label>
+    <div class="select select--disabled select--multiple">
+        <select id="multi-select-disabled" multiple disabled>
+            <option value="Option 1">Option 1</option>
+            <option value="Option 2">Option 2</option>
+            <option value="Option 3">Option 3</option>
+            <option value="Option 4">Option 4</option>
+            <option value="Option 5">Option 5</option>
+            <option value="Option length">Option that is a long value and could wrap</option>
+        </select>
+    </div> -->
+        <div class="messagearea">
+            <textarea name="" id="" cols="30" rows="10"
+                placeholder="	Note Fault & Rectification Completed/Action Required."></textarea>
+            <button>SUBMIT</button>
+        </div>
+    </form>
+</body>
+
+</html>
